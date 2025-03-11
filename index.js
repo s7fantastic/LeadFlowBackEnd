@@ -4,8 +4,6 @@ import config from './config/index.js'
 import router from './src/routes/index.js'
 import cookieParser from 'cookie-parser'
 import db from "./utils/db.js";
-import { sendSmsToOne } from "./utils/sms.js";
-import { agenda } from "./utils/dbJob.js";
 
 /* --------------------------------- express -------------------------------- */
 
@@ -37,24 +35,7 @@ db.connect()
 app.use("/api", router);
 app.all("*", (req, res) => res.send("You've tried reaching a route that doesn't exist."));
 
-/* ------------------------------- زمان بندی------------------------------- */
-
-// agenda.on("ready", async () => {
-  // console.log('agenda is ready');
-  // ---------------------------تعریف تابع ارسال پیامک ----------------------
-  // agenda.define('send_sms', async (job) => {
-    // -------------------------استخراج پارامتر از  فراخوانی زمانبند----------------
-    // const { receptor, message } = job.attrs.data;
-    // if (receptor) {
-      // -----------------کتابخانه ار سال پیامک ---------------------
-      // sendSmsToOne(message, receptor)
-    // }
-  // })
-  //  ---------------------------شروع به کار زمانبند---------------------
-  // agenda.start();
-// });
-
-// -------------------------------هندل کردن خطا های پیش بینی نشده در اکسپرس --------------------
+/* ------------------------------- Handling unexpected errors in Express ------------------------------- */
 app.use((error, request, response, next) => {
   console.log(`error ${error.message}`)
   const status = error.status || 400

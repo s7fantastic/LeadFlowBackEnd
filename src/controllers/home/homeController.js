@@ -1,6 +1,5 @@
-import { failMessage, notFoundErrorMessage, sendDataToClient, successMessage } from '../../../utils/message.js';
+import { failMessage, sendDataToClient, successMessage } from '../../../utils/message.js';
 import Lead from '../../models/leadModel.js'
-import mongoose from 'mongoose'
 
 export const getLeads = async (req, res) => {
   const leads = await Lead.find({}).lean();

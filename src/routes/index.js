@@ -1,5 +1,5 @@
 import express from "express";
-import homeRoutes from "./lead/index.js";
+import leadRoutes from "./lead/index.js";
 
 const app = express()
 
