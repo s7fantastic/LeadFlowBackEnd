@@ -1,9 +1,9 @@
 import express from "express";
 import cors from 'cors'
-import config from './config/index.js'
-import router from './src/routes/index.js'
+import config from '../config/index.js'
+import router from './routes/index.js'
 import cookieParser from 'cookie-parser'
-import db from "./utils/db.js";
+import db from "../utils/db.js";
 
 /* --------------------------------- express -------------------------------- */
 
