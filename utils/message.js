@@ -2,13 +2,13 @@ import db from "./db.js";
 
 export const successMessage = async (res, message) => {
     await db.disconnect()
-    res.send({ message: `${message} was successfully done ` })
+    res.send({ successMessage: `${message} was successfully done `, status: false })
     return;
 }
 
-export const failMessage = async (res, message, error) => {
+export const failMessage = async (res, message) => {
     await db.disconnect()
-    res.send({ error: `${message} faced an issue ${error}` })
+    res.send({ errorMessage: `${message}` })
     return;
 }
 
