@@ -1,8 +1,9 @@
-# Build a REST API with Node JS and Express
+Getting Started
 
-![REST API](https://i.ibb.co/7GWCCbp/Screenshot-2020-07-12-at-08-30-32.png)
+If you are running the project locally, simply open the index.js file located inside the config folder, and set the production value to false:
 
-## Introduction
-This is a code repository for the corresponding video tutorial. 
+production : false,
 
-In this video, we will create a Node JS and Express JS CRUD REST API.
+If you want to deploy on a server, change the production value to true:
+
+production : true,
