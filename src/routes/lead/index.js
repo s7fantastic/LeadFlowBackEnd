@@ -1,5 +1,5 @@
 import express from 'express';
-import { addLead, getLeads } from '../../controllers/home/homeController.js';
+import { addLead, getLeads } from '../../controllers/lead/leadController.js';
 const app = express()
 
 app.get('/', getLeads)
